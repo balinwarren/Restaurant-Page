@@ -31,15 +31,30 @@ body {
     width: 100vw;
 }
 
-.header {
+.header, .title {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 100vw;
 }
 
-.tab {
+.msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+.tab, h3 {
     font-family: 'roboto';
+}
+
+#name {
+    font-family: 'ananda';
+    font-size: 72px;
+    margin: 25px 0 0 0;
+    padding: 0;
 }
