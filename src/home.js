@@ -2,6 +2,7 @@ export function buildHome(content) {
     content.appendChild(buildTabs());
     content.appendChild(buildTitle());
     content.appendChild(buildMsg());
+    content.appendChild(buildHours());
 }
 
 export function buildTabs() {
@@ -26,7 +27,7 @@ export function buildTabs() {
     return element;
 }
 
-export function buildTitle() {
+function buildTitle() {
     const element = document.createElement('div');
     element.classList.add('title');
 
@@ -38,12 +39,12 @@ export function buildTitle() {
     return element;
 }
 
-export function buildMsg() {
+function buildMsg() {
     const element = document.createElement('div');
     element.classList.add('msg');
 
     const message = document.createElement('h3');
-    message.innerHTML = "'This is America. You already know this isn't authentic why are you asking? Get out. Now.'";
+    message.innerHTML = "'This is America. Obviously it ain't authentic whaddo I look like?'";
     element.appendChild(message);
 
     const author = document.createElement('h3');
@@ -53,3 +54,41 @@ export function buildMsg() {
     return element;
 }
 
+function buildHours() {
+    const element = document.createElement('div');
+    element.classList.add('hours');
+
+    const header = document.createElement('h3');
+    header.innerHTML = 'Hours';
+    element.appendChild(header);
+
+    const monday = document.createElement('h3');
+    monday.innerHTML = 'MON: 11AM-9PM';
+    element.appendChild(monday);
+
+    const tuesday = document.createElement('h3');
+    tuesday.innerHTML = 'TUES: 11AM-9PM';
+    element.appendChild(tuesday);
+
+    const wednesday = document.createElement('h3');
+    wednesday.innerHTML = 'WED: 11AM-9PM';
+    element.appendChild(wednesday);
+
+    const thursday = document.createElement('h3');
+    thursday.innerHTML = 'THURS: CLOSED';
+    element.appendChild(thursday);
+
+    const friday = document.createElement('h3');
+    friday.innerHTML = 'FRI: 11AM-10PM';
+    element.appendChild(friday);
+
+    const saturday = document.createElement('h3');
+    saturday.innerHTML = 'SAT: 11AM-10PM';
+    element.appendChild(saturday);
+
+    const sunday = document.createElement('h3');
+    sunday.innerHTML = 'SUN: 1PM-10PM';
+    element.appendChild(sunday);
+
+    return element;
+}

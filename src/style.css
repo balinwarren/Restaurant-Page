@@ -40,12 +40,22 @@ body {
     width: 100vw;
 }
 
-.msg {
+.msg, .hours {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 75px;
+}
+
+.hours > h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.hours {
+    gap: 15px;
+    margin-bottom: 50px;
 }
 
 .tab, h3 {
