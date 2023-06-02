@@ -1,8 +1,12 @@
-export function buildHome(content) {
+export function buildHome() {
+    let content = document.getElementById('content');
+
     content.appendChild(buildTabs());
     content.appendChild(buildTitle());
     content.appendChild(buildMsg());
     content.appendChild(buildHours());
+
+    console.log('built home');
 }
 
 export function buildTabs() {
@@ -11,7 +15,10 @@ export function buildTabs() {
 
     const homeTab = document.createElement('h3');
     homeTab.classList.add('tab');
+    homeTab.classList.add('active');
     homeTab.innerHTML = 'Home';
+    homeTab.addEventListener('click', resetDOM);
+    homeTab.addEventListener('click', buildHome);
     element.appendChild(homeTab);
 
     const menuTab = document.createElement('h3');
@@ -91,4 +98,14 @@ function buildHours() {
     element.appendChild(sunday);
 
     return element;
+}
+
+function resetDOM() {
+    let content = document.getElementById('content');
+
+    while(content.firstChild) {
+        content.removeChild(content.lastChild);
+    }
+
+    console.log('reset executed');
 }

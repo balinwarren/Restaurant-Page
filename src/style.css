@@ -62,6 +62,19 @@ body {
     font-family: 'roboto';
 }
 
+.tab:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.tab {
+    transition: transform 0.1s ease-in-out;
+}
+
+.active {
+    border-bottom: 2px solid black;
+}
+
 #name {
     font-family: 'ananda';
     font-size: 72px;
