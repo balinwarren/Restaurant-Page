@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'roboto';
+    src: url('./fonts/Roboto-Regular.woff') format('woff'),
+        url('./fonts/Roboto-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ananda';
+    src: url('./fonts/Ananda.woff') format('woff'),
+        url('./fonts/Ananda.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'migontama';
+    src: url('./fonts/Migontama-Regular.woff') format('woff'),
+        url('./fonts/Migontama-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 100vw;
+}
+
+.header {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+}
+
+.tab {
+    font-family: 'roboto';
+}
