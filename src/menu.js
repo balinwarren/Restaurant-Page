@@ -1,4 +1,5 @@
 import { buildTabs } from "./home";
+import { applyTabListeners, resetDOM } from "./index";
 import caesar from "./images/caesar.jpg";
 import mista from "./images/mista.jpg";
 import spring from "./images/spring-mix.jpg";
@@ -10,12 +11,16 @@ import pepperoni from "./images/pepperoni.jpg";
 import sicilian from "./images/sicilian.jpg";
 
 export function buildMenu() {
+    resetDOM();
     let content = document.getElementById('content');
 
     content.appendChild(buildTabs());
     content.appendChild(buildMenuRow('Salads', saladImgSrc, saladImgAlt, saladItemNames, saladItemDescrs));
     content.appendChild(buildMenuRow('Pasta', pastaImgSrc, pastaImgAlt, pastaItemNames, pastaItemDescrs));
     content.appendChild(buildMenuRow('Pizza', pizzaImgSrc, pizzaImgAlt, pizzaItemNames, pizzaItemDescrs));
+    applyTabListeners();
+
+    console.log('built menu');
 }
 
 function buildMenuRow(category, src, alt, names, descriptions) {

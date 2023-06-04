@@ -1,10 +1,14 @@
+import { applyTabListeners, resetDOM } from "./index";
+
 export function buildHome() {
+    resetDOM();
     let content = document.getElementById('content');
 
     content.appendChild(buildTabs());
     content.appendChild(buildTitle());
     content.appendChild(buildMsg());
     content.appendChild(buildHours());
+    applyTabListeners();
 
     console.log('built home');
 }
@@ -16,18 +20,19 @@ export function buildTabs() {
     const homeTab = document.createElement('h3');
     homeTab.classList.add('tab');
     homeTab.classList.add('active');
+    homeTab.id = 'home';
     homeTab.innerHTML = 'Home';
-    homeTab.addEventListener('click', resetDOM);
-    homeTab.addEventListener('click', buildHome);
     element.appendChild(homeTab);
 
     const menuTab = document.createElement('h3');
     menuTab.classList.add('tab');
+    menuTab.id = 'menu';
     menuTab.innerHTML = 'Menu';
     element.appendChild(menuTab);
 
     const contactTab = document.createElement('h3');
     contactTab.classList.add('tab');
+    contactTab.id = 'contact';
     contactTab.innerHTML = 'Contact';
     element.appendChild(contactTab);
 
@@ -98,14 +103,4 @@ function buildHours() {
     element.appendChild(sunday);
 
     return element;
-}
-
-function resetDOM() {
-    let content = document.getElementById('content');
-
-    while(content.firstChild) {
-        content.removeChild(content.lastChild);
-    }
-
-    console.log('reset executed');
 }
