@@ -15,6 +15,7 @@ export function buildMenu() {
     content.appendChild(buildTabs());
     content.appendChild(buildSalad());
     content.appendChild(buildPasta());
+    content.appendChild(buildPizza());
 }
 
 function buildSalad() {
@@ -115,6 +116,69 @@ function buildPasta() {
         'White Wine, Garlic, Cream, and Parmesan Cheese. Served on Linguine.',
         'Sundried Tomatoes, Mushrooms, Creamy Pesto Sauce. Served on Fusilli.',
         'Baby Spinach, Ricotta, Garlic, Fresh Marinara and topped with Mozzarella. Served on Penne.',
+    ];
+
+    for(let i = 0; i < 3; i++) {
+        const item = document.createElement('div');
+        item.classList.add('item');
+
+        const itemImg = new Image();
+        itemImg.src = imgSrc[i];
+        itemImg.alt = imgAlt[i];
+        itemImg.classList.add('itemImg');
+        item.appendChild(itemImg);
+
+        const itemName = document.createElement('h3');
+        itemName.innerHTML = itemNames[i];
+        itemName.classList.add('itemName');
+        item.appendChild(itemName);
+
+        const itemDescr = document.createElement('p');
+        itemDescr.innerHTML = itemDescrs[i];
+        itemDescr.classList.add('description');
+        item.appendChild(itemDescr);
+
+        itemRow.appendChild(item);
+    }
+
+    return element;
+}
+
+function buildPizza() {
+    const element = document.createElement('div');
+    element.classList.add('menuContainer');
+
+    const title = document.createElement('h2');
+    title.innerHTML = "Pizza";
+    title.classList.add('menuHeader');
+    element.appendChild(title);
+
+    const itemRow = document.createElement('div');
+    itemRow.classList.add('itemRow');
+    element.appendChild(itemRow);
+
+    const imgSrc = [
+        margherita,
+        pepperoni,
+        sicilian
+    ];
+
+    const imgAlt = [
+        'pizza with fresh tomato',
+        'pizza with pepperoni',
+        'pizza with 3 meats',
+    ]
+
+    const itemNames = [
+        'Margherita',
+        'Pepperoni',
+        'Sicilian',
+    ];
+
+    const itemDescrs = [
+        'Marinara Sauce, Mozzarella, Tomatoes, Fresh Basil, Roasted Garlic.',
+        'Marinara Sauce, Mozzarella, Pepperoni and Oregano.',
+        'Italian Sausage, Spicy Capicola Ham, Salami, Fresh Basil, Fresh Oregano, Mozzarella Cheese, Provolone Cheese, Marinara Sauce.',
     ];
 
     for(let i = 0; i < 3; i++) {
