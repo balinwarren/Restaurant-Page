@@ -13,17 +13,17 @@ export function buildMenu() {
     let content = document.getElementById('content');
 
     content.appendChild(buildTabs());
-    content.appendChild(buildSalad());
-    content.appendChild(buildPasta());
-    content.appendChild(buildPizza());
+    content.appendChild(buildMenuRow('Salads', saladImgSrc, saladImgAlt, saladItemNames, saladItemDescrs));
+    content.appendChild(buildMenuRow('Pasta', pastaImgSrc, pastaImgAlt, pastaItemNames, pastaItemDescrs));
+    content.appendChild(buildMenuRow('Pizza', pizzaImgSrc, pizzaImgAlt, pizzaItemNames, pizzaItemDescrs));
 }
 
-function buildSalad() {
+function buildMenuRow(category, src, alt, names, descriptions) {
     const element = document.createElement('div');
     element.classList.add('menuContainer');
 
     const title = document.createElement('h2');
-    title.innerHTML = "Salads";
+    title.innerHTML = category;
     title.classList.add('menuHeader');
     element.appendChild(title);
 
@@ -31,47 +31,23 @@ function buildSalad() {
     itemRow.classList.add('itemRow');
     element.appendChild(itemRow);
 
-    const imgSrc = [
-        caesar,
-        mista,
-        spring
-    ];
-
-    const imgAlt = [
-        'caesar salad',
-        'mista salad',
-        'spring mix salad',
-    ]
-
-    const itemNames = [
-        'Caesar Classica',
-        'Mista',
-        'Spring Mix',
-    ];
-
-    const itemDescrs = [
-        'Romaine Lettuce, Croutons, Romano Cheese, Caesar Dressing',
-        'Mixed Greens, Tomatoes, Mushrooms, Black Olives, Croutons, Pepperoncini, Mozzarella, Parmesan, Balsamic Vinaigrette.',
-        'Spring Lettuce Mix, Red Onion, Feta Cheese, Golden Raisins, Pine Nuts, Sweet Vinaigrette.',
-    ];
-
     for(let i = 0; i < 3; i++) {
         const item = document.createElement('div');
         item.classList.add('item');
 
         const itemImg = new Image();
-        itemImg.src = imgSrc[i];
-        itemImg.alt = imgAlt[i];
+        itemImg.src = src[i];
+        itemImg.alt = alt[i];
         itemImg.classList.add('itemImg');
         item.appendChild(itemImg);
 
         const itemName = document.createElement('h3');
-        itemName.innerHTML = itemNames[i];
+        itemName.innerHTML = names[i];
         itemName.classList.add('itemName');
         item.appendChild(itemName);
 
         const itemDescr = document.createElement('p');
-        itemDescr.innerHTML = itemDescrs[i];
+        itemDescr.innerHTML = descriptions[i];
         itemDescr.classList.add('description');
         item.appendChild(itemDescr);
 
@@ -81,128 +57,74 @@ function buildSalad() {
     return element;
 }
 
-function buildPasta() {
-    const element = document.createElement('div');
-    element.classList.add('menuContainer');
+const saladImgSrc = [
+    caesar,
+    mista,
+    spring
+];
 
-    const title = document.createElement('h2');
-    title.innerHTML = "Pasta";
-    title.classList.add('menuHeader');
-    element.appendChild(title);
+const saladImgAlt = [
+    'caesar salad',
+    'mista salad',
+    'spring mix salad',
+]
 
-    const itemRow = document.createElement('div');
-    itemRow.classList.add('itemRow');
-    element.appendChild(itemRow);
+const saladItemNames = [
+    'Caesar Classica',
+    'Mista',
+    'Spring Mix',
+];
 
-    const imgSrc = [
-        alfredo,
-        pesto,
-        rustico
-    ];
+const saladItemDescrs = [
+    'Romaine Lettuce, Croutons, Romano Cheese, Caesar Dressing',
+    'Mixed Greens, Tomatoes, Mushrooms, Black Olives, Croutons, Pepperoncini, Mozzarella, Parmesan, Balsamic Vinaigrette.',
+    'Spring Lettuce Mix, Red Onion, Feta Cheese, Golden Raisins, Pine Nuts, Sweet Vinaigrette.',
+];
 
-    const imgAlt = [
-        'alfredo pasta',
-        'creamy pesto pasta',
-        'marina on penne pasta',
-    ]
+const pastaImgSrc = [
+    alfredo,
+    pesto,
+    rustico
+];
 
-    const itemNames = [
-        'Alfredo Supremo',
-        'Creamy Pesto Pasta',
-        'Pasta Rustico',
-    ];
+const pastaImgAlt = [
+    'alfredo pasta',
+    'creamy pesto pasta',
+    'marina on penne pasta',
+]
 
-    const itemDescrs = [
-        'White Wine, Garlic, Cream, and Parmesan Cheese. Served on Linguine.',
-        'Sundried Tomatoes, Mushrooms, Creamy Pesto Sauce. Served on Fusilli.',
-        'Baby Spinach, Ricotta, Garlic, Fresh Marinara and topped with Mozzarella. Served on Penne.',
-    ];
+const pastaItemNames = [
+    'Alfredo Supremo',
+    'Creamy Pesto Pasta',
+    'Pasta Rustico',
+];
 
-    for(let i = 0; i < 3; i++) {
-        const item = document.createElement('div');
-        item.classList.add('item');
+const pastaItemDescrs = [
+    'White Wine, Garlic, Cream, and Parmesan Cheese. Served on Linguine.',
+    'Sundried Tomatoes, Mushrooms, Creamy Pesto Sauce. Served on Fusilli.',
+    'Baby Spinach, Ricotta, Garlic, Fresh Marinara and topped with Mozzarella. Served on Penne.',
+];
 
-        const itemImg = new Image();
-        itemImg.src = imgSrc[i];
-        itemImg.alt = imgAlt[i];
-        itemImg.classList.add('itemImg');
-        item.appendChild(itemImg);
+const pizzaImgSrc = [
+    margherita,
+    pepperoni,
+    sicilian
+];
 
-        const itemName = document.createElement('h3');
-        itemName.innerHTML = itemNames[i];
-        itemName.classList.add('itemName');
-        item.appendChild(itemName);
+const pizzaImgAlt = [
+    'pizza with fresh tomato',
+    'pizza with pepperoni',
+    'pizza with 3 meats',
+]
 
-        const itemDescr = document.createElement('p');
-        itemDescr.innerHTML = itemDescrs[i];
-        itemDescr.classList.add('description');
-        item.appendChild(itemDescr);
+const pizzaItemNames = [
+    'Margherita',
+    'Pepperoni',
+    'Sicilian',
+];
 
-        itemRow.appendChild(item);
-    }
-
-    return element;
-}
-
-function buildPizza() {
-    const element = document.createElement('div');
-    element.classList.add('menuContainer');
-
-    const title = document.createElement('h2');
-    title.innerHTML = "Pizza";
-    title.classList.add('menuHeader');
-    element.appendChild(title);
-
-    const itemRow = document.createElement('div');
-    itemRow.classList.add('itemRow');
-    element.appendChild(itemRow);
-
-    const imgSrc = [
-        margherita,
-        pepperoni,
-        sicilian
-    ];
-
-    const imgAlt = [
-        'pizza with fresh tomato',
-        'pizza with pepperoni',
-        'pizza with 3 meats',
-    ]
-
-    const itemNames = [
-        'Margherita',
-        'Pepperoni',
-        'Sicilian',
-    ];
-
-    const itemDescrs = [
-        'Marinara Sauce, Mozzarella, Tomatoes, Fresh Basil, Roasted Garlic.',
-        'Marinara Sauce, Mozzarella, Pepperoni and Oregano.',
-        'Italian Sausage, Spicy Capicola Ham, Salami, Fresh Basil, Fresh Oregano, Mozzarella Cheese, Provolone Cheese, Marinara Sauce.',
-    ];
-
-    for(let i = 0; i < 3; i++) {
-        const item = document.createElement('div');
-        item.classList.add('item');
-
-        const itemImg = new Image();
-        itemImg.src = imgSrc[i];
-        itemImg.alt = imgAlt[i];
-        itemImg.classList.add('itemImg');
-        item.appendChild(itemImg);
-
-        const itemName = document.createElement('h3');
-        itemName.innerHTML = itemNames[i];
-        itemName.classList.add('itemName');
-        item.appendChild(itemName);
-
-        const itemDescr = document.createElement('p');
-        itemDescr.innerHTML = itemDescrs[i];
-        itemDescr.classList.add('description');
-        item.appendChild(itemDescr);
-
-        itemRow.appendChild(item);
-    }
-
-    return element;
-}
+const pizzaItemDescrs = [
+    'Marinara Sauce, Mozzarella, Tomatoes, Fresh Basil, Roasted Garlic.',
+    'Marinara Sauce, Mozzarella, Pepperoni and Oregano.',
+    'Italian Sausage, Spicy Capicola Ham, Salami, Fresh Basil, Fresh Oregano, Mozzarella Cheese, Provolone Cheese, Marinara Sauce.',
+];
