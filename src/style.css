@@ -40,7 +40,7 @@ body {
     width: 100vw;
 }
 
-.msg, .hours {
+.msg, .hours, .menuContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,5 +79,40 @@ body {
     font-family: 'ananda';
     font-size: 72px;
     margin: 25px 0 0 0;
+    padding: 0;
+}
+
+.menuHeader {
+    font-family: 'ananda';
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.itemGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.itemName {
+    font-family: 'migontama';
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.description {
+    font-family: 'migontama';
+    font-size: 18px;
+    margin: 0;
     padding: 0;
 }
