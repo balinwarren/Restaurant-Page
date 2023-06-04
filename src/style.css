@@ -89,10 +89,11 @@ body {
     padding: 0;
 }
 
-.itemGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+.itemRow {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
 }
 
 .item {
@@ -100,19 +101,30 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: left;
+    min-width: none;
+    min-height: none;
+    width: 550px;
+    text-align: center;
 }
 
 .itemName {
     font-family: 'migontama';
     font-size: 25px;
-    margin: 0;
+    margin: -70px 0 -20px 0;
     padding: 0;
 }
 
 .description {
     font-family: 'migontama';
     font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.itemImg {
+    height: 450px;
+    width: 550px;
+    object-fit: scale-down;
     margin: 0;
     padding: 0;
 }

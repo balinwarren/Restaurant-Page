@@ -1,4 +1,7 @@
 import { buildTabs } from "./home";
+import caesar from "./images/caesar.jpg";
+import mista from "./images/mista.jpg";
+import spring from "./images/spring-mix.jpg";
 
 export function buildMenu() {
     let content = document.getElementById('content');
@@ -16,14 +19,14 @@ function buildSalad() {
     title.classList.add('menuHeader');
     element.appendChild(title);
 
-    const itemGrid = document.createElement('div');
-    itemGrid.classList.add('itemGrid');
-    element.appendChild(itemGrid);
+    const itemRow = document.createElement('div');
+    itemRow.classList.add('itemRow');
+    element.appendChild(itemRow);
 
     const imgSrc = [
-        './images/caesar.jpg',
-        './images/mista.jpg',
-        './images/spring-mix.jpg'
+        caesar,
+        mista,
+        spring
     ];
 
     const imgAlt = [
@@ -48,7 +51,7 @@ function buildSalad() {
         const item = document.createElement('div');
         item.classList.add('item');
 
-        const itemImg = document.createElement('Img');
+        const itemImg = new Image();
         itemImg.src = imgSrc[i];
         itemImg.alt = imgAlt[i];
         itemImg.classList.add('itemImg');
@@ -64,7 +67,7 @@ function buildSalad() {
         itemDescr.classList.add('description');
         item.appendChild(itemDescr);
 
-        itemGrid.appendChild(item);
+        itemRow.appendChild(item);
     }
 
     return element;
