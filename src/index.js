@@ -1,6 +1,7 @@
 import './style.css'
 import { buildHome } from './home';
 import { buildMenu } from './menu';
+import { buildContact } from './contact';
 
 const content = document.createElement('div');
 content.id = 'content';
@@ -41,9 +42,9 @@ export function applyTabListeners() {
     const contact = document.getElementById('contact');
 
     let tabs = [home, menu, contact];
-    let funcs = [buildHome, buildMenu];
+    let funcs = [buildHome, buildMenu, buildContact];
 
-    for(let i = 0; i < 2; i++) {
+    for(let i = 0; i < 3; i++) {
         tabs[i].addEventListener('click', resetDOM);
         tabs[i].addEventListener('click', funcs[i]);
         tabs[i].addEventListener('click', removeActive);

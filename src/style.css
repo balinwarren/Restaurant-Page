@@ -40,7 +40,7 @@ body {
     width: 100vw;
 }
 
-.msg, .hours, .menuContainer {
+.msg, .hours, .menuContainer, .formContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,4 +128,41 @@ body {
     object-fit: scale-down;
     margin: 0;
     padding: 0;
+}
+
+.formContainer {
+    gap: 10px;
+}
+
+.formContainer > label {
+    align-self: flex-start;
+    font-family: 'roboto';
+    font-size: 25px;
+}
+
+.formContainer > input {
+    align-self: flex-end;
+    border: none;
+    background-color: lightgray;
+    font-family: 'roboto';
+    height: 30px;
+    width: 80px;
+    border-radius: 10px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.formContainer > input:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.formContainer > textarea {
+    border-radius: 10px;
+    border: 2px solid black;
+    font-family: 'roboto';
+    resize: none;
+}
+
+.formContainer > textarea:focus {
+    outline: none;
 }
